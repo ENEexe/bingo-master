@@ -85,9 +85,9 @@ And if that's a bit confusing to you there's a step-by-step guide below.
 ## 7. You are all set to publish your bingo ! 
 - At this point if you want to use your bingo by yourself - you can simply right click the html file and open with any browser.
 - If you want to publish your bingo game so other people can use it too - follow the steps below !
-- PLEASE use this [GUIDE](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) as a reference.
 - To publish your page you will first ned to create your own repository on GitHub.
 - Rename the file you just made to  `index.html` and add it to your new repository.
+- From here follow this [GUIDE](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site) as a reference. 
 
 # Have more questions ? 
 You can contact me on discord DMs @ `ene.senkou`
