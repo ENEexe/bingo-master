@@ -82,3 +82,10 @@ And if that's a bit confusing to you there's a step-by-step guide below.
 - They are highlighted with a commented text.
 - If you don't want this in your bingo - simply delete the section or comment it out with `CTRL + /`
 
+## 7. You are all set to publish your bingo ! 
+- PLEASE use this [GUIDE](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) as a reference.
+- To publish your page you will first ned to create your own repository on GitHub.
+- Rename the file you just made to  `index.html` and add it to your new repository.
+
+# Have more questions ? 
+You can contact me on discord DMs @ `ene.senkou`
