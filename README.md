@@ -83,7 +83,7 @@ And if that's a bit confusing to you there's a step-by-step guide below.
 - If you don't want this in your bingo - simply delete the section or comment it out with `CTRL + /`
 
 ## 7. You are all set to publish your bingo ! 
-- At this point if you want to use you bingo by yourself - you can simply right click the html file and open with any browser.
+- At this point if you want to use your bingo by yourself - you can simply right click the html file and open with any browser.
 - If you want to publish your bingo game so other people can use it too - follow the steps below !
 - PLEASE use this [GUIDE](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) as a reference.
 - To publish your page you will first ned to create your own repository on GitHub.
