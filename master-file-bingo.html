@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fufu Bingo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="width: fit-content; text-align: center; padding: 2rem; margin: 0; font-family: 'Shantell Sans', cursive">
+    <div style="display: flex">
+      <div>
+        <div
+          id="bingoDiv"
+          style="
+            width: fit-content;
+            text-align: center;
+            padding: 2rem;
+            margin: 0;
+            background: linear-gradient(to bottom, black, #4d4d4d);
+            border-radius: 4px;
+          "
+        >
+          <!-- YOUR TITLE GOES HERE  -->
+          <h1 style="color: white; letter-spacing: 20px; font-size: 60px">TITLE TEXT</h1>
+          <!-- SUBTITLE LINE -->
+          <!-- <h1 style="color: white; letter-spacing: 20px; font-size: 60px">SUBTITLE TEXT</h1> -->
+
+          <!-- TO ADD MORE CELLS TO THE GRID COPY THE CODE BELOW AND PASTE INSIDE THE tbody TAG -->
+          <!-- NOTE THAT AMOUNT OF "GRID-CELL" ELEMENTS SHOULD BE EQUAL TO AMOUNT OF "GRID-ROW" ELEMENTS -->
+          <!-- WITH CODE BELOW WE NOW HAVE A 5x5 GRID -->
+          <!-- NOTE THAT IN ORDER TO MAKE IT LOOK GOOD THE GRID DIMENSIONS SHOULD BE ODD NUMBERS (i.e. 5x5, 7x7, 9x9, etc.) -->
+          <table class="grid">
+            <tbody>
+              <!-- ROW 1 -->
+              <tr id="GRID-ROW">
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+              </tr>
+
+              <!-- ROW 2 -->
+              <tr id="GRID-ROW">
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+              </tr>
+
+              <!-- ROW 3 -->
+              <!-- THE SECTION BELOW SHOULD ALWAYS BE IN THE MIDDLE -->
+              <tr id="GRID-ROW-MIDDLE">
+                <td class="cell" id="GRID-CELL-MIDDLE"></td>
+                <td class="cell" id="GRID-CELL-MIDDLE"></td>
+                <td class="cell cell-free" id="GRID-CELL-MIDDLE"></td>
+                <td class="cell" id="GRID-CELL-MIDDLE"></td>
+                <td class="cell" id="GRID-CELL-MIDDLE"></td>
+              </tr>
+              <!-- THE SECTION ABOVE SHOULD ALWAYS BE IN THE MIDDLE -->
+
+              <!-- ROW 4 -->
+              <tr id="GRID-ROW">
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+              </tr>
+
+              <!-- ROW 5 -->
+              <tr id="GRID-ROW">
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+                <td class="cell" id="GRID-CELL"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top: 2rem; display: flex; justify-content: center">
+          <div class="btn" onclick="saveDivAsImage()">
+            <a>Save as Image</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-left: 5rem; padding-top: 4rem; font-size: 24px">
+        <ul style="list-style: none; padding: 0px" class="list">
+          <!-- ANY PROMO LINKS GO HERE -->
+          <li style="margin-bottom: 2rem">
+            __TEXT_HERE__ <a href="__YOUR_LINK__" target="_blank">__HIGHLIGHTED_LINK_TEXT__</a>
+          </li>
+          <!-- ADD MORE BY COPYING THE LINE ABOVE -->
+
+          <!-- EXAMPLE PROMO LINK -->
+          <!-- <li style="margin-top: 2rem">CHECK OUT FUFU MERCH <a href="https://uwumarket.us/collections/fufu" target="_blank">HERE</a></li> -->
+
+          <div style="margin-top: 10rem; display: flex; justify-content: center">
+            <div class="btn" onclick="toggleDarkMode()">
+              <a>Toggle Dark Mode</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <style>
+      .cell {
+        border: 1px solid white;
+        width: 150px;
+        height: 150px;
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        position: relative;
+        min-width: 150px;
+      }
+      .circle {
+        width: 130px;
+        height: 130px;
+        border: 12px solid yellow;
+        border-radius: 50%;
+        z-index: 999;
+        position: absolute;
+        top: 0;
+      }
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .btn {
+        border: 1px solid black;
+        padding: 24px;
+        border-radius: 4px;
+        font-size: 24px;
+        cursor: pointer;
+        width: fit-content;
+      }
+      .dark-mode {
+        background: linear-gradient(to bottom, #4d4d4d, black);
+        .btn {
+          color: white;
+          border: 1px solid white;
+        }
+        li,
+        a {
+          color: white;
+        }
+      }
+      @media (max-width: 768px) {
+        .cell {
+          width: 100px;
+          height: 100px;
+          font-size: 16px;
+          padding: 8px;
+        }
+        .circle {
+          width: 90px;
+          height: 90px;
+          border-width: 8px;
+        }
+        .btn {
+          padding: 16px;
+          font-size: 20px;
+        }
+      }
+    </style>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+      function saveDivAsImage() {
+        const div = document.querySelector("#bingoDiv");
+        html2canvas(div).then(function (canvas) {
+          const link = document.createElement("a");
+          link.href = canvas.toDataURL();
+          link.download = "bingo.png";
+          link.click();
+        });
+      }
+
+      // ADD YOU COLLECTION OF PROMPTS HERE
+      // ALL ITEMS MUST BE ENCLOSED IN "QUOTATION MARKS" AND SEPARATED BY A COMMA
+      const collection = ["Example item 1", "Example item 2", "Example item 3"];
+
+      // TO MODIFY THE NUMBER OF RANDOM PROMPTS GENERATED, CHANGE THE NUMBER IN THE FUNCTION CALL BELOW
+      // FOR EXAPMLE FOR 5x5 GRID, 25 PROMPTS ARE NEEDED
+      const randomValues = getRandomValues(collection, 25); // <-- CHANGE THE NUMBER HERE
+
+      const cells = document.querySelectorAll(".cell");
+      cells.forEach((cell, index) => {
+        const div = document.createElement("div");
+        div.classList.add("wrapper");
+        const paragraph = document.createElement("p");
+        if (cell.classList.contains("cell-free")) {
+          paragraph.textContent = "FREE SPACE"; // <-- NAME YOUR FREE SPACE NODE HERE
+        } else {
+          paragraph.textContent = randomValues[index];
+        }
+        div.appendChild(paragraph);
+        cell.appendChild(div);
+      });
+
+      function getRandomValues(array, count) {
+        const shuffled = array.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+      }
+      function toggleLineThrough() {
+        if (this.querySelector(".circle")) {
+          this.querySelector(".wrapper").removeChild(this.querySelector(".circle"));
+        } else {
+          const circle = document.createElement("div");
+          circle.classList.add("circle");
+          this.querySelector(".wrapper").appendChild(circle);
+        }
+      }
+      cells.forEach((cell) => {
+        cell.addEventListener("click", toggleLineThrough);
+      });
+
+      // ############################################################
+      // KOANMI CODE SECTION
+      // DELETE IF NOT NEEDED
+      const allowedKeys = {
+        37: "left",
+        38: "up",
+        39: "right",
+        40: "down",
+        65: "a",
+        66: "b",
+      };
+      const konamiCode = ["up", "up", "down", "down", "left", "right", "left", "right", "b", "a"];
+      let konamiCodePosition = 0;
+      document.addEventListener("keydown", function (e) {
+        let key = allowedKeys[e.keyCode];
+        let requiredKey = konamiCode[konamiCodePosition];
+        if (key == requiredKey) {
+          konamiCodePosition++;
+          if (konamiCodePosition == konamiCode.length) {
+            activateCheats();
+            konamiCodePosition = 0;
+          }
+        } else {
+          konamiCodePosition = 0;
+        }
+      });
+      function activateCheats() {
+        const listElement = document.querySelector(".list");
+        const existingSecretItem = document.querySelector(".secret");
+        if (existingSecretItem) {
+          return;
+        }
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        listItem.className = "secret";
+        listItem.textContent = "__YOUR SECRET MESSAGE__"; // <-- Add your secret message here
+        link.href = "__YOUR SECRET LINK__"; // <-- Add your secret link here
+        link.textContent = "__HIGHLIGHTED TEXT__"; // <-- Add your secret link text here
+        link.target = "_blank";
+        listItem.style.marginTop = "2rem";
+        listItem.appendChild(link);
+        listElement.appendChild(listItem);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const darkMode = localStorage.getItem("dark-mode");
+        if (darkMode === "true") {
+          toggleDarkMode();
+        }
+        logStringInConsole(
+          "Hi! Here's your clue: There's a certain code you can input on this page. The code was popular among NES Contra gamers and went by the name 'Contra Code' or '30 Lives Code'. Now it is known by a different name. Good luck!"
+        );
+      });
+      function logStringInConsole(string) {
+        console.log(string);
+      }
+      // END OF KOANMI CODE SECTION
+      // ############################################################
+
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("dark-mode", "true");
+        } else {
+          localStorage.setItem("dark-mode", "false");
+        }
+      }
+    </script>
+  </body>
+</html>
